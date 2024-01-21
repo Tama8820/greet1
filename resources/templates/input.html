@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+<meta charset="UTF-8">
+<title>挨拶登録</title>
+</head>
+<body>
+	<h2>挨拶登録</h2>
+	<form action="input" th:action="@{input}" th:object ="${greetForm}" method = "post">
+		<table>
+			<tr>
+				<td>言語</td>
+				<td>
+					<input type="text" th:field="*{language}">
+				</td>
+				<td th:if="${#fields.hasErrors('language')}" th:errors="*{language}" style="color:red"></td>
+			</tr>
+			<tr>
+				<td>朝</td>
+				<td>
+					<input type="text" th:field="*{morning}">
+				</td>
+				<td th:if="${#fields.hasErrors('morning')}" th:errors="*{morning}" style="color:red"></td>
+			</tr>
+			<tr>
+				<td>昼</td>
+				<td>
+					<input type="text" th:field="*{noon}">
+				</td>
+				<td th:if="${#fields.hasErrors('noon')}" th:errors="*{noon}" style="color:red"></td>
+			</tr>
+			<tr>
+				<td>夕</td>
+				<td>
+					<input type="text" th:field="*{evening}">
+				</td>
+				<td th:if="${#fields.hasErrors('evening')}" th:errors="*{evening}" style="color:red"></td>
+			</tr>
+			<tr>
+				<td>夜</td>
+				<td>
+					<input type="text" th:field="*{night}">
+				</td>
+				<td th:if="${#fields.hasErrors('night')}" th:errors="*{night}" style="color:red"></td>
+			</tr>
+			<tr>
+				<td>備考</td>
+				<td>
+					<input type="text" th:field="*{remarks}">
+				</td>
+				<td th:if="${#fields.hasErrors('remarks')}" th:errors="*{remarks}" style="color:red"></td>
+			</tr>
+		</table>
+		<br>
+		<input type="submit" value="登録">
+	</form>
+
+
+</body>
+</html>
